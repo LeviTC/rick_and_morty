@@ -4,24 +4,24 @@ import styled from "styled-components"
 
 const StyledCardContainer = styled.div`
    display: flex;
-   flex-wrap: wrap;
-   justify-content: space-between;
-   color: white
+   flex-flow: wrap row;
+   justify-content: space-around;
 `;
 
-export default function Cards(props) {
+export default function Cards({characters, onClose}) {
    return (
       <StyledCardContainer>
-      {props.characters.map(character => (
+      {characters.map(character => (
          <Card
-            onClick={() => window.alert('Emulamos que se cierra la card')}
             key={character.id}
+            id={character.id}
             name={character.name}
             status={character.status}
             species={character.species}
             gender={character.gender}
             origin={character.name}
             image={character.image}
+            onClose={onClose}
          />
       ))}
    </StyledCardContainer>
