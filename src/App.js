@@ -6,10 +6,9 @@ import Nav from './components/Nav';
 
 function App() {
    const [characters, setCharacters] = useState([]);
-   const [addedCharacterIds, setAddedCharacterIds] = useState([]);
 
    function onSearch(id) {
-      if (addedCharacterIds.includes(id)) {
+      if (characters.some(character => character.id === Number(id))) {
          window.alert('¡Este personaje ya está agregado!');
          return;
       }
@@ -17,7 +16,6 @@ function App() {
       axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
          if (data.name) {
             setCharacters((oldChars) => [...oldChars, data]);
-            setAddedCharacterIds((oldIds) => [...oldIds, id]);
          } else {
             window.alert('¡No hay personajes con este ID!');
          }
