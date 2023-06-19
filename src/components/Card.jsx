@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components"
+import { NavLink } from "react-router-dom";
 
 
 const StyledCard = styled.div`
@@ -18,7 +19,7 @@ const StyledCard = styled.div`
    &:hover {
       transform: translateY(-5px);
       background-color: rgba(0, 255, 255, 0.3);
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
       color: rgba(0, 255, 255);
     }
 `;
@@ -58,7 +59,7 @@ export default function Card({id, name, status, species, gender, origin, image, 
          <StyledCard>
             <CloseButton onClick={handleCardClose}>X</CloseButton>
             <StyledText>
-            <p>Name: {name}</p>
+            <NavLink to={`/detail/${id}`}><p>Name: {name}</p></NavLink>
             <p>Status: {status}</p>
             <p>Species: {species}</p>
             <p>Gender: {gender}</p>
