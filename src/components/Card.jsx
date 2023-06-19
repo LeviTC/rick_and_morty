@@ -60,10 +60,6 @@ export default function Card({id, name, status, species, gender, origin, image, 
             <CloseButton onClick={handleCardClose}>X</CloseButton>
             <StyledText>
             <NavLink to={`/detail/${id}`}><p>Name: {name}</p></NavLink>
-            <p>Status: {status}</p>
-            <p>Species: {species}</p>
-            <p>Gender: {gender}</p>
-            <p>Origin: {origin}</p>
             </StyledText>
             <Image src={image} alt={name} />
          </StyledCard>
