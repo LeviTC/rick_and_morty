@@ -13,7 +13,7 @@ export default function Nav({onSearch}) {
     return (
         <div>
             <SearchBar onSearch={onSearch} />
-            <button onClick={addRandomCharacter}>Agregar Personaje Aleatorio</button>
+                <button onClick={addRandomCharacter}>Agregar Personaje Aleatorio</button>
             <NavLink to="/about">
                 <button>About</button>
             </NavLink>

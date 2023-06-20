@@ -17,7 +17,7 @@ const StyledCard = styled.div`
    align-items: center;
 
    &:hover {
-      transform: translateY(-5px);
+      transform: scale(1.05);
       background-color: rgba(0, 255, 255, 0.3);
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
       color: rgba(0, 255, 255);
