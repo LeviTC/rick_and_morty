@@ -13,12 +13,12 @@ export default function Nav({onSearch}) {
     return (
         <div>
             <SearchBar onSearch={onSearch} />
-                <button onClick={addRandomCharacter}>Agregar Personaje Aleatorio</button>
+                <button className="buttonsSearchBar" onClick={addRandomCharacter}>Agregar Personaje Aleatorio</button>
             <NavLink to="/about">
-                <button>About</button>
+                <button className="buttonsSearchBar" >About</button>
             </NavLink>
             <NavLink to="/home">
-                <button>Home</button>
+                <button className="buttonsSearchBar" >Home</button>
             </NavLink>
         </div>
     )

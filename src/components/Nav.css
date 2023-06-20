@@ -1,4 +1,4 @@
-button {
+.buttonsSearchBar {
     margin: 5px;
     border: 2px solid rgba(0, 255, 255);
     background-color: rgba(0, 255, 255, 0.2);
@@ -6,7 +6,7 @@ button {
     border-radius: 5px;
 }
 
-button:hover {
+.buttonsSearchBar:hover {
     transform: scale(1.1);
       background-color: rgba(0, 255, 255, 0.4);
       color: rgba(0, 255, 255);
