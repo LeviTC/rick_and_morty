@@ -16,7 +16,6 @@ export default function Cards({characters, onClose}) {
             key={character.id}
             id={character.id}
             name={character.name}
-
             image={character.image}
             onClose={onClose}
          />
