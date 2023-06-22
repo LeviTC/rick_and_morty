@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 import SearchBar from "../SearchBar/SearchBar.jsx";
 import "./Nav.css"
 
@@ -13,12 +13,13 @@ export default function Nav({onSearch, setAccess}) {
 
     const handleLogOut = () => {
         setAccess(false);
+
     }
     return (
         <div>
             
             <SearchBar onSearch={onSearch} />
-                <button className="buttonsSearchBar" onClick={addRandomCharacter}>Agregar Personaje Aleatorio</button>
+            <button className="buttonsSearchBar" onClick={addRandomCharacter}>Agregar Personaje Aleatorio</button>
 
             <NavLink to="/about">
                 <button className="buttonsSearchBar" >About</button>
@@ -28,9 +29,9 @@ export default function Nav({onSearch, setAccess}) {
                 <button className="buttonsSearchBar" >Home</button>
             </NavLink>
 
-           
-                <button onClick={handleLogOut}>Log Out</button>
-        
+            <NavLink to="/">
+                <button className="buttonsSearchBar" onClick={handleLogOut}>Log Out</button>
+            </NavLink>
             
         </div>
     )

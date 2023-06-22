@@ -20,9 +20,10 @@ function App() {
    const [characters, setCharacters] = useState([]);
    const [access, setAccess] = useState(false);
 
-   useEffect(() => {
-      !access && navigate('/');
-   }, [access]);
+   // useEffect(() => {
+   //    !access && navigate('/');
+   // }, [access]);
+
    const location = useLocation();
 
    function onSearch(id) {
@@ -37,7 +38,9 @@ function App() {
          } else {
             window.alert('¡No hay personajes con este ID!');
          }
-      });
+      }).catch(() => {
+         alert("ID no encontrado ");
+      })
    };
 
    const login = (userData) => {
@@ -55,7 +58,7 @@ function App() {
    return (
       <div className='App'>
          {
-            location.pathname !== "/" && <Nav onSearch={onSearch} setAccess={setAccess} />
+            location.pathname !== "/" && location.pathname !== "*" ? <Nav onSearch={onSearch} setAccess={setAccess} /> : null
          }
 
          <Routes>

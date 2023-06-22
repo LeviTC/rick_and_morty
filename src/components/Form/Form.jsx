@@ -51,7 +51,7 @@ export default function Form ({login}) {
                 />
                 {errors.password && <p>{errors.password}</p>} 
 
-                <button type="submit">Submit</button>
+                <button type="submit">Log In</button>
             </form>
         </div>
     )
