@@ -4,12 +4,12 @@ import React, { useState, useEffect } from 'react';
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 
 //COMPONENTS
-import Form from './components/Form.jsx';
-import Cards from './components/Cards.jsx';
-import Nav from './components/Nav.jsx';
-import About from './components/About.jsx';
-import Detail from './components/Detail.jsx';
-import Error404 from './components/Error404';
+import Form from './components/Form/Form.jsx';
+import Cards from './components/Cards/Cards.jsx';
+import Nav from './components/Nav/Nav.jsx';
+import About from './components/About/About.jsx';
+import Detail from './components/Detail/Detail.jsx';
+import Error404 from './components/Error404/Error404.jsx';
 
 
 const EMAIL = "erletaco@outlook.com";
@@ -18,7 +18,8 @@ const PASSWORD = "hola123";
 function App() {
    let navigate = useNavigate();
    const [characters, setCharacters] = useState([]);
-   const [access, setAcces] = useState(false)
+   const [access, setAccess] = useState(false);
+
    useEffect(() => {
       !access && navigate('/');
    }, [access]);
@@ -41,7 +42,7 @@ function App() {
 
    const login = (userData) => {
       if (userData.email === EMAIL && userData.password === PASSWORD) {
-         setAcces(true);
+         setAccess(true);
          navigate("/home")
       }
    }
@@ -54,7 +55,7 @@ function App() {
    return (
       <div className='App'>
          {
-            location.pathname !== "/" && <Nav onSearch={onSearch} />
+            location.pathname !== "/" && <Nav onSearch={onSearch} setAccess={setAccess} />
          }
 
          <Routes>

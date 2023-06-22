@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from './Card';
+import Card from '../Card/Card.jsx';
 import styled from "styled-components"
 
 const StyledCardContainer = styled.div`

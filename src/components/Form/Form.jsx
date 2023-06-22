@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import validations from "./validations";
+import validations from "../validations"
 
 export default function Form ({login}) {
     const [userData, setUserData] = useState({
